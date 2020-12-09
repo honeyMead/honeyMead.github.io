@@ -9,18 +9,48 @@ h1 {
   text-shadow: 1px 1px 5px #18150d;
 }
 
+a {
+  color: #fff8de;
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.6;
+  transition: opacity 150ms;
+}
+
+footer:hover {
+  opacity: 1;
+}
+
+.logo-image {
+  height: 50px;
+  width: 50px;
+  margin-right: 8px;
+  margin-left: -8px;
+}
+
 b {
   font-size: 17px;
 }
 
 .flex {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.column {
   flex-direction: column;
 }
 
 .center {
   justify-content: center;
-  align-items: center;
 }
 
 .two-third {
