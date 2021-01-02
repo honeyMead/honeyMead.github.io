@@ -14,10 +14,7 @@ a {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  padding-top: 10px;
   padding-bottom: 10px;
   background-color: #282315;
   text-align: center;
@@ -67,41 +64,32 @@ b {
   margin-bottom: 30px;
 }
 
-.card {
-  display: inline-flex;
+.large-card,
+.small-card {
+  background-color: #363636;
+}
+
+.large-card {
+  visibility: visible;
   position: relative;
-  min-width: 118px;
-  padding: 20px 23px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 3px #111111;
-  background-color: #344232;
-  color: white;
-  transition: box-shadow 100ms;
-  user-select: none;
-  cursor: pointer;
 }
 
-.card:hover {
-  box-shadow: 1px 1px 10px black;
-}
-
-.card>b,
-.card>img {
-  margin-bottom: 10px;
-}
-
-.card>img {
-  height: 90px;
-  width: 90px;
-}
-
-.card>a {
+.small-card {
+  visibility: hidden;
   position: absolute;
-  top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-  z-index: 2;
+}
+
+@media(max-width: 860px) {
+  .large-card {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    width: 0;
+  }
+
+  .small-card {
+    visibility: visible;
+    position: relative;
+  }
 }
