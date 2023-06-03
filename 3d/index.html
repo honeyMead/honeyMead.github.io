@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>OK-GameEngine</title>
+    <base href="/" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.svg">
+
+    <script>
+        /**@type number*/
+        let lastTimestamp;
+
+        async function update(/**@type number*/ timestamp) {
+            if (!timestamp) {
+                timestamp = performance.now();
+            }
+            if (!lastTimestamp) {
+                lastTimestamp = timestamp;
+            }
+            let difference = timestamp - lastTimestamp;
+            await DotNet.invokeMethodAsync('OK-GameEngine', 'Update', difference);
+            lastTimestamp = timestamp;
+            requestAnimationFrame(update);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="app">Loading...</div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>
